@@ -3,6 +3,7 @@
 （仓库为综合类型，主要放置有意思的代码，感兴趣的朋友可以下载看看）
 
 主要涉及技术：
+
     1.后端：python + flask + flask-sqlalchemy + mysqlclient + requests + BeautifulSoup4 + Blueprint
     2.前端：vue + element + sass + axios + vuex + echarts + eslint + Tinymce
 
