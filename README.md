@@ -4,7 +4,7 @@
 
 主要涉及技术：
 
-    1.后端：python + flask + flask-sqlalchemy + mysqlclient + requests + BeautifulSoup4 + Blueprint
+    1.后端：python + flask + flask-sqlalchemy  + requests + BeautifulSoup4 + Blueprint
     2.前端：vue + element + sass + axios + vuex + echarts + eslint + Tinymce
 
 # 一、仓库项目 python-sys （安装python环境）
