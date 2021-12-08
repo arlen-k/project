@@ -16,10 +16,11 @@
 
  4.下载：pip install -i https://pypi.douban.com/simple virtualenvwrapper-win   此方式可以快速下载插件
 
- 5.启动服务项目：python manager.py runserver
+ 5.启动服务项目：python manager.py runserver 项目启动后建议用 nginx 做反向代理配置
 
  6.卸载：pip uninstall -r modules.txt -y
- 
+    
+
  目录介绍：
     common 数据库model
     config 环境配置
@@ -47,3 +48,5 @@
     store 状态管理器
     utils 方法库
     views 业务代码处和测试代码集合处
+
+    
