@@ -1,0 +1,64 @@
+{% extends "common/layout.html" %}
+{% block content %}
+<div >
+    <div class="row">
+        <div class="col-lg-4 col-xs-6">   {{ info.name | safe }} </div>
+        <div class="col-lg-8 col-xs-6 text-r">
+            <a  href="{{buildUrl('/')}}">返回列表</a>
+        </div>
+        <style >
+            .text-r{
+                text-align: right;
+            }
+        </style>
+    </div>
+    <div class="row">
+        <iframe class="play"  frameborder="0" scrolling="no" width="100%" height="600px" src="{{info.url}}" border="0" marginwidth="0" marginheight="0" allowfullscreen="true"></iframe>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p>主演：{{ info.actor | safe }}</p>
+                    <p>{{ info.desc | safe }}</p>
+                   
+                    <a href="{{info.url}}"> <button type="button" class="btn btn-success"  id="paly2">播放方式二</button></a>    
+                    <!-- {{info.iframe_url}} -->
+                    <!-- <p>原地址：<a target="_blank" href="{{ info.url | safe }}">{{ info.url | safe }}</a></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <!-- List&group -->
+        <ul class="list-group random">
+            <li class="list-group-item">随机推荐</li>
+            <li class="list-group-item">
+                <div class="row">
+                    {% for item in recommend_list %}
+                    <div class="col-lg-2 col-xs-6">
+                        <a class="thumbnail" href="{{ '%s?id=%s' | format( buildUrl('/member/info'),item.id) }}">
+                            <img style="width: 100%;height:180px; " src="{{ item.cover_pic | safe }}">
+                            <div class="caption">
+                                <p style="overflow: hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:1;">
+                                    {{ item.name | safe }}</p>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<style>
+    .random {
+        padding: 15px;
+    }
+
+    .play {
+        height: 400px;
+    }
+</style>
+{% endblock %}

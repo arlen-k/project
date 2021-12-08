@@ -1,0 +1,48 @@
+{% extends "common/layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        排序： <a href="{{ buildUrl('/?order=lastest') }}" class="btn btn-link">最新</a> <a href="{{ buildUrl('/?order=hot') }}" class="btn btn-link">热门</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4"  style="float: right">
+        <div class="input-group">
+            <input type="text" class="form-control seaVido">
+            <span class="input-group-btn">
+                <button class="btn btn-default seabtn" type="button">
+                    搜索
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.seabtn').click(function(){
+            window.location.href='/member/seaViedo?name='+$('.seaVido').val()
+        })
+    });
+</script>
+<div class="row" style="margin:10px 0 ;">
+    {% if data %}
+    {% for item in data %}
+    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+        <a  class="thumbnail" href="{{ '%s?id=%s' | format( buildUrl('/member/info'),item.id) }}">
+            <img style="height:180px;width: 100%; " src="{{ item.cover_pic | safe }}" alt='暂无'>
+            <div class="caption">
+                <p class="titleName"> {{ item.name | safe }}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+<style>
+   .titleName{
+        overflow: hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:1;
+   } 
+</style>
+{% include 'common/pagenation.html' %}
+{% endblock %}
+
