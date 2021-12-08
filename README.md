@@ -4,9 +4,9 @@
 
 主要涉及技术：
 
-    1.后端：python + flask + flask-sqlalchemy  + requests + BeautifulSoup4 + Blueprint
+    1.后端：python + flask + flask-sqlalchemy + requests + BeautifulSoup4 + Blueprint
     2.前端：vue + element + sass + axios + vuex + echarts + eslint + Tinymce
-
+    3.电影web： Bootstrap + Jq + ajax + css + h5
 # 一、仓库项目 python-sys （安装python环境）
 
  1.为python编写的后台服务，涉及电影网站pc端页面model和电影网站后台系统的所有前端接口。
