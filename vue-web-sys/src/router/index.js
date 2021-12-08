@@ -4,7 +4,7 @@
  * @Autor: 作者博客：www.arlen.top
  * @Date: 2021-07-06 10:02:20
  * @LastEditors: Seven
- * @LastEditTime: 2021-11-16 16:54:42
+ * @LastEditTime: 2021-12-08 16:41:16
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -14,13 +14,13 @@ Vue.use(VueRouter)
 export const routes = [
   {
     path: '/',
-    redirect: "blog",
+    redirect: "login",
   },{
     path:'/blog',
     name: 'blog',
     component: () => import('../views/blog'),
     meta: {
-      title: "博客",
+      title: "测试3D功能代码",
     }
   },
   {
