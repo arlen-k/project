@@ -1,0 +1,148 @@
+<?xml version="1.0" standalone="yes"?>
+<RECORDS>
+	<RECORD>
+		<id>22</id>
+		<name>Flask - HTTP方法( HTTP Methods)</name>
+		<date>2021-07-09 10:23:59</date>
+		<show>1</show>
+		<type>2</type>
+		<content>&lt;p&gt;Http协议是万维网数据通信的基础。 在该协议中定义了从指定URL检索数据的不同方法。&lt;/p&gt;
+&lt;p&gt;下表总结了不同的http方法 -&lt;/p&gt;
+&lt;table class=&quot;table&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;Sr.No.&lt;/th&gt;
+&lt;th class=&quot;ts&quot;&gt;方法和描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;strong class=&quot;notranslate&quot;&gt;GET&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;以未加密的形式将数据发送到服务器。 最常见的方法。&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;strong class=&quot;notranslate&quot;&gt;HEAD&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;与GET相同，但没有响应体&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;strong class=&quot;notranslate&quot;&gt;POST&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;用于将HTML表单数据发送到服务器。 POST方法接收的数据不会被服务器缓存。&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;strong class=&quot;notranslate&quot;&gt;PUT&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;用上传的内容替换目标资源的所有当前表示。&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;
+&lt;p&gt;&lt;strong class=&quot;notranslate&quot;&gt;DELETE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;删除URL给出的目标资源的所有当前表示&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;默认情况下，Flask路由响应&lt;strong class=&quot;notranslate&quot;&gt;GET&lt;/strong&gt;请求。 但是，可以通过为&lt;strong class=&quot;notranslate&quot;&gt;route()&lt;/strong&gt;装饰器提供方法参数来更改此首选项。&lt;/p&gt;
+&lt;p&gt;为了演示在URL路由中使用&lt;strong class=&quot;notranslate&quot;&gt;POST&lt;/strong&gt;方法，首先让我们创建一个HTML表单并使用&lt;strong class=&quot;notranslate&quot;&gt;POST&lt;/strong&gt;方法将表单数据发送到URL。&lt;/p&gt;
+&lt;p&gt;将以下脚本另存为login.html&lt;/p&gt;
+&lt;pre class=&quot;notranslate&quot;&gt;&lt;code class=&quot;flask has-numbering hljs xml&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;action&lt;/span&gt; = &lt;span class=&quot;hljs-string&quot;&gt;&quot;http://localhost:5000/login&quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;method&lt;/span&gt; = &lt;span class=&quot;hljs-string&quot;&gt;&quot;post&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;Enter Name:&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;type&lt;/span&gt; = &lt;span class=&quot;hljs-string&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;name&lt;/span&gt; = &lt;span class=&quot;hljs-string&quot;&gt;&quot;nm&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;
+         &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;type&lt;/span&gt; = &lt;span class=&quot;hljs-string&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;value&lt;/span&gt; = &lt;span class=&quot;hljs-string&quot;&gt;&quot;submit&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;form&lt;/span&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul class=&quot;pre-numbering&quot;&gt;
+&lt;li&gt;1&lt;/li&gt;
+&lt;li&gt;2&lt;/li&gt;
+&lt;li&gt;3&lt;/li&gt;
+&lt;li&gt;4&lt;/li&gt;
+&lt;li&gt;5&lt;/li&gt;
+&lt;li&gt;6&lt;/li&gt;
+&lt;li&gt;7&lt;/li&gt;
+&lt;li&gt;8&lt;/li&gt;
+&lt;li&gt;9&lt;/li&gt;
+&lt;li&gt;10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在在Python shell中输入以下脚本。&lt;/p&gt;
+&lt;pre class=&quot;notranslate&quot;&gt;&lt;code class=&quot;flask has-numbering hljs ruby&quot;&gt;from flask import Flask, redirect, url_for, request
+app = Flask(__name_&lt;span class=&quot;hljs-number&quot;&gt;_&lt;/span&gt;)
+@app.route(&lt;span class=&quot;hljs-string&quot;&gt;&apos;/success/&amp;lt;name&amp;gt;&apos;&lt;/span&gt;)
+&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(name)&lt;/span&gt;&lt;/span&gt;:
+   &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&apos;welcome %s&apos;&lt;/span&gt; % name
+@app.route(&lt;span class=&quot;hljs-string&quot;&gt;&apos;/login&apos;&lt;/span&gt;,methods = [&lt;span class=&quot;hljs-string&quot;&gt;&apos;POST&apos;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot;&gt;&apos;GET&apos;&lt;/span&gt;])
+&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;:
+   &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; request.method == &lt;span class=&quot;hljs-string&quot;&gt;&apos;POST&apos;&lt;/span&gt;:
+      user = request.form[&lt;span class=&quot;hljs-string&quot;&gt;&apos;nm&apos;&lt;/span&gt;]
+      &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; redirect(url_for(&lt;span class=&quot;hljs-string&quot;&gt;&apos;success&apos;&lt;/span&gt;,name = user))
+   &lt;span class=&quot;hljs-symbol&quot;&gt;else:&lt;/span&gt;
+      user = request.args.get(&lt;span class=&quot;hljs-string&quot;&gt;&apos;nm&apos;&lt;/span&gt;)
+      &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; redirect(url_for(&lt;span class=&quot;hljs-string&quot;&gt;&apos;success&apos;&lt;/span&gt;,name = user))
+&lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; __name_&lt;span class=&quot;hljs-number&quot;&gt;_&lt;/span&gt; == &lt;span class=&quot;hljs-string&quot;&gt;&apos;__main__&apos;&lt;/span&gt;:
+   app.run(debug = True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul class=&quot;pre-numbering&quot;&gt;
+&lt;li&gt;1&lt;/li&gt;
+&lt;li&gt;2&lt;/li&gt;
+&lt;li&gt;3&lt;/li&gt;
+&lt;li&gt;4&lt;/li&gt;
+&lt;li&gt;5&lt;/li&gt;
+&lt;li&gt;6&lt;/li&gt;
+&lt;li&gt;7&lt;/li&gt;
+&lt;li&gt;8&lt;/li&gt;
+&lt;li&gt;9&lt;/li&gt;
+&lt;li&gt;10&lt;/li&gt;
+&lt;li&gt;11&lt;/li&gt;
+&lt;li&gt;12&lt;/li&gt;
+&lt;li&gt;13&lt;/li&gt;
+&lt;li&gt;14&lt;/li&gt;
+&lt;li&gt;15&lt;/li&gt;
+&lt;li&gt;16&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;开发服务器开始运行后，在浏览器中打开&lt;strong class=&quot;notranslate&quot;&gt;login.html&lt;/strong&gt;&amp;nbsp;，在文本字段中输入name，然后单击&lt;strong class=&quot;notranslate&quot;&gt;Submit&lt;/strong&gt;&amp;nbsp;。&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;up-img&quot; src=&quot;https://iowiki.com/static/cimg/flask/post_method_example.jpg&quot; alt=&quot;后方法示例&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;表单数据将POST到表单标记的action子句中的URL。&lt;/p&gt;
+&lt;p class=&quot;cus-ppp&quot;&gt;&lt;strong class=&quot;notranslate&quot;&gt;http://localhost/login&lt;/strong&gt;映射到&lt;strong class=&quot;notranslate&quot;&gt;login()&lt;/strong&gt;函数。 由于服务器通过&lt;strong class=&quot;notranslate&quot;&gt;POST&lt;/strong&gt;方法接收数据，因此从表格数据获得的&apos;nm&apos;参数值是通过 - 获得的 -&lt;/p&gt;
+&lt;pre class=&quot;notranslate&quot;&gt;&lt;code class=&quot;flask has-numbering hljs ini&quot;&gt;&lt;span class=&quot;hljs-attr&quot;&gt;user&lt;/span&gt; = request.form[&lt;span class=&quot;hljs-string&quot;&gt;&apos;nm&apos;&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul class=&quot;pre-numbering&quot;&gt;
+&lt;li&gt;1&lt;/li&gt;
+&lt;li&gt;2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;它作为可变部分传递给&lt;strong class=&quot;notranslate&quot;&gt;&apos;/success&apos;&lt;/strong&gt;&amp;nbsp;。 浏览器在窗口中显示&lt;strong class=&quot;notranslate&quot;&gt;welcome&lt;/strong&gt;消息。&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;up-img&quot; src=&quot;https://iowiki.com/static/cimg/flask/welcome_message.jpg&quot; alt=&quot;欢迎辞&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;cus-ppp&quot;&gt;在&lt;strong class=&quot;notranslate&quot;&gt;login.html&lt;/strong&gt;中将方法参数更改为&lt;strong class=&quot;notranslate&quot;&gt;&apos;GET&apos;&lt;/strong&gt;&amp;nbsp;，然后在浏览器中再次打开它。 服务器上收到的数据是通过&lt;strong class=&quot;notranslate&quot;&gt;GET&lt;/strong&gt;方法获得的。 &apos;nm&apos;参数的值现在由 - 获得 -&lt;/p&gt;
+&lt;pre class=&quot;notranslate&quot;&gt;&lt;code class=&quot;flask has-numbering hljs ini&quot;&gt;&lt;span class=&quot;hljs-attr&quot;&gt;User&lt;/span&gt; = request.args.get(&amp;lsquo;nm&amp;rsquo;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul class=&quot;pre-numbering&quot;&gt;
+&lt;li&gt;1&lt;/li&gt;
+&lt;li&gt;2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里，&amp;nbsp;&lt;strong class=&quot;notranslate&quot;&gt;args&lt;/strong&gt;是包含表单参数对及其对应值的列表的字典对象。 与&apos;nm&apos;参数对应的值将像以前一样传递到&apos;/ success&apos;URL。&lt;/p&gt;</content>
+		<remake>分享链接</remake>
+		<imgUrl>1625798099567.jpg</imgUrl>
+	</RECORD>
+	<RECORD>
+		<id>24</id>
+		<name>测试</name>
+		<date>2021-12-08 11:00:35</date>
+		<show>1</show>
+		<type>3</type>
+		<content>&lt;p&gt;去玩儿&lt;/p&gt;</content>
+		<remake/>
+		<imgUrl>163893243133.jpg</imgUrl>
+	</RECORD>
+</RECORDS>
+

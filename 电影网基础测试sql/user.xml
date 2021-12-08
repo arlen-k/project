@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="yes"?>
+<RECORDS>
+	<RECORD>
+		<id>2</id>
+		<nickname>alren</nickname>
+		<login_name>6666</login_name>
+		<login_pwd>c124f5d862335fc7e852338b336dd12a</login_pwd>
+		<login_salt>LO2dzVVG</login_salt>
+		<status>1</status>
+		<updated_time>29/6/2021 15:03:57</updated_time>
+		<created_time>29/6/2021 15:03:57</created_time>
+	</RECORD>
+	<RECORD>
+		<id>4</id>
+		<nickname>admin</nickname>
+		<login_name>admin</login_name>
+		<login_pwd>715a5b988fc97875302a1f25fd03ccb8</login_pwd>
+		<login_salt>eG6ezaiH</login_salt>
+		<status>1</status>
+		<updated_time>7/7/2021 16:51:03</updated_time>
+		<created_time>7/7/2021 16:51:03</created_time>
+	</RECORD>
+	<RECORD>
+		<id>5</id>
+		<nickname>asdf</nickname>
+		<login_name>user</login_name>
+		<login_pwd>3cb114db272a0c7de50f3f669890c7ca</login_pwd>
+		<login_salt>MgZBPLgv</login_salt>
+		<status>1</status>
+		<updated_time>26/7/2021 10:45:40</updated_time>
+		<created_time>26/7/2021 10:45:40</created_time>
+	</RECORD>
+</RECORDS>
+
