@@ -22,13 +22,13 @@
     
 
  目录介绍：
-    common 数据库model
-    config 环境配置
-    controllers 业务代码逻辑
-    interceptors 前端访问拦截器
-    jobs 爬虫脚本（已经失效，后期需要修改）
-    static pc访问端模板 js方法集合库
-    templates pc访问端模板
+    common 数据库model  
+    config 环境配置  
+    controllers 业务代码逻辑  
+    interceptors 前端访问拦截器  
+    jobs 爬虫脚本（已经失效，后期需要修改）  
+    static pc访问端模板 js方法集合库  
+    templates pc访问端模板  
 
 # 二、仓库项目 vue-web-sys （安装node环境）
 
@@ -41,12 +41,11 @@
  4.启动项目 npm run serve 进入 login 页面登录 账号密码默认可查看
 
  目录介绍：
-    api 接口库
-    assets 图片和初始全局样式
-    components 组件库
-    router 路由
-    store 状态管理器
-    utils 方法库
-    views 业务代码处和测试代码集合处
+    api 接口库  
+    assets 图片和初始全局样式  
+    components 组件库  
+    router 路由  
+    store 状态管理器  
+    utils 方法库  
+    views 业务代码处和测试代码集合处  
 
-    
