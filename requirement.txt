@@ -1,0 +1,11 @@
+flask
+flask-sqlalchemy
+mysqlclient
+flask-script
+flask_debugtoolbar
+apscheduler
+Flask-APScheduler
+requests
+BeautifulSoup4
+tornado
+werkzeug
