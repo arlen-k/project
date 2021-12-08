@@ -1,8 +1,10 @@
-# 电影网系统管理 sys+h5+pc ， 仓库为综合类型，主要放置有意思的代码，感兴趣的朋友可以下载看看
+# 电影网系统管理 分为三个端 ： pc电脑端、 后台系统、 服务系统 
+
+（仓库为综合类型，主要放置有意思的代码，感兴趣的朋友可以下载看看）
 
 主要涉及技术：
     1.后端：python + flask + flask-sqlalchemy + mysqlclient + requests + BeautifulSoup4 + Blueprint
-    2.前端：vue + element + sass + axios + vuex + echarts + eslint
+    2.前端：vue + element + sass + axios + vuex + echarts + eslint + Tinymce
 
 # 一、仓库项目 python-sys （安装python环境）
 
@@ -17,6 +19,15 @@
  5.启动服务项目：python manager.py runserver
 
  6.卸载：pip uninstall -r modules.txt -y
+ 
+ 目录介绍：
+    common 数据库model
+    config 环境配置
+    controllers 业务代码逻辑
+    interceptors 前端访问拦截器
+    jobs 爬虫脚本（已经失效，后期需要修改）
+    static pc访问端模板 js方法集合库
+    templates pc访问端模板
 
 # 二、仓库项目 vue-web-sys （安装node环境）
 
@@ -27,3 +38,12 @@
  3.执行 cnpm i   
 
  4.启动项目 npm run serve 进入 login 页面登录 账号密码默认可查看
+
+ 目录介绍：
+    api 接口库
+    assets 图片和初始全局样式
+    components 组件库
+    router 路由
+    store 状态管理器
+    utils 方法库
+    views 业务代码处和测试代码集合处
