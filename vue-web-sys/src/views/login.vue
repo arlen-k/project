@@ -61,8 +61,8 @@ export default {
   data() {
     return {
       ruleForm: {
-        login_name: '',
-        login_pwd: '',
+        login_name: '',  // 6666
+        login_pwd: '', // 123123
       },
       rules: {},
     }
@@ -109,7 +109,7 @@ export default {
   flex-wrap: wrap;
 }
 .loginBox {
-  width: 30%;
+  width: 500px;
   height: 38%;
   max-width: 600px;
   min-height: 300px;

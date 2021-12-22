@@ -17,9 +17,7 @@ var request = axios.create({
 })
 
 request.interceptors.request.use( config => {
-    if(config.url!='/api/member/loginUser'){
-      config.headers['token'] =  sessionStorage.token 
-    }
+    config.headers['token'] =  sessionStorage.token || ''
     return config
   },
   error => {
