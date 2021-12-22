@@ -11,7 +11,7 @@
     1.后端：python + flask + flask-sqlalchemy + requests + BeautifulSoup4 + Blueprint
     2.前端：vue + element + sass + axios + vuex + echarts + eslint + Tinymce
     3.电影web： Bootstrap + Jq + ajax + css + h5
-    4.前端自动化部署：node shelljs ssh2-sftp-client 
+    4.前端自动化部署：node + shelljs + ssh2-sftp-client  + nginx
  
 # 一、仓库项目 python-sys （安装python环境）
 
