@@ -14,15 +14,18 @@
             type="login_name"
             v-model="ruleForm.login_name"
             maxlength="20"
+            placeholder="请输入账号"
             autocomplete="off"
           ></el-input>
         </el-form-item>
-        <el-form-item label="确认密码">
+        <el-form-item label="密码">
           <el-input
             type="login_pwd"
             @keyup.enter="submitForm"
             v-model="ruleForm.login_pwd"
+            placeholder="请输入密码"
             maxlength="20"
+            show-password
             autocomplete="off"
           ></el-input>
         </el-form-item>
@@ -58,8 +61,8 @@ export default {
   data() {
     return {
       ruleForm: {
-        login_name: '6666',
-        login_pwd: '123123',
+        login_name: '',
+        login_pwd: '',
       },
       rules: {},
     }
