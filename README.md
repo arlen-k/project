@@ -9,7 +9,7 @@
 主要涉及技术：
 
     1.后端：python + flask + flask-sqlalchemy + requests + BeautifulSoup4 + Blueprint
-    2.前端：vue + element + sass + axios + vuex + echarts + eslint + Tinymce
+    2.前端：vue + element + sass + axios + vuex + echarts + eslint + Tinymce +webpack
     3.电影web： Bootstrap + Jq + ajax + css + h5
     4.前端自动化部署：node + shelljs + ssh2-sftp-client  + nginx
  
