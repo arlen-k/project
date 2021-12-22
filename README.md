@@ -1,5 +1,7 @@
 # 电影网系统管理 分为三个端 ： pc电脑端、 后台系统、 服务系统 
+# 在线观看：http://tv.arlen.top
 
+ 可视化后台管理，一键式脚本自动化部署抓取，自动化部署linux，给你高大上的操作体验
 （仓库为综合类型,研究学习项目，主要放置有意思的代码，感兴趣的朋友可以下载看看）
 
 主要涉及技术：
@@ -7,6 +9,8 @@
     1.后端：python + flask + flask-sqlalchemy + requests + BeautifulSoup4 + Blueprint
     2.前端：vue + element + sass + axios + vuex + echarts + eslint + Tinymce
     3.电影web： Bootstrap + Jq + ajax + css + h5
+    4.前端自动化部署：node shelljs ssh2-sftp-client 
+ 
 # 一、仓库项目 python-sys （安装python环境）
 
  1.为python编写的后台服务，涉及电影网站pc端页面model和电影网站后台系统的所有前端接口。
