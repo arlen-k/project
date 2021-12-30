@@ -2,7 +2,7 @@
  在线观看：http://tv.arlen.top
  后台系统：http://tv.arlen.top:8081/#/login
  可视化后台管理，一键式脚本自动化部署抓取，自动化部署linux，给你高大上的操作体验
-（仓库为综合类型,研究学习项目，主要放置有意思的代码，感兴趣的朋友可以下载看看, 邮箱：935567738@qq.com）
+（仓库为综合类型,研究学习项目，主要放置有意思的代码，感兴趣的朋友可以下载看看）
 
 ![image](https://user-images.githubusercontent.com/31032218/147064836-b0e3f2cd-2b0c-48a0-b613-62b18c445329.png)
 ![image](https://user-images.githubusercontent.com/31032218/147064848-d3ba56b3-5f08-47a1-ab2a-7d9ac8a695c5.png)
