@@ -2,17 +2,19 @@
  在线观看：http://tv.arlen.top
  后台系统：http://tv.arlen.top:8081/#/login
  可视化后台管理，一键式脚本自动化部署抓取，自动化部署linux，给你高大上的操作体验
-（仓库为综合类型,研究学习项目，主要放置有意思的代码，感兴趣的朋友可以下载看看）
+（仓库为综合类型,研究学习项目，主要放置有意思的代码，感兴趣的朋友可以下载看看, 邮箱：935567738@qq.com）
+
 ![image](https://user-images.githubusercontent.com/31032218/147064836-b0e3f2cd-2b0c-48a0-b613-62b18c445329.png)
 ![image](https://user-images.githubusercontent.com/31032218/147064848-d3ba56b3-5f08-47a1-ab2a-7d9ac8a695c5.png)
 
 主要涉及技术：
 
-    1.后端：python + flask + flask-sqlalchemy + requests + BeautifulSoup4 + Blueprint
+    1.后端：python + flask + flask-sqlalchemy + requests +  Blueprint + tornado
     2.前端：vue + element + sass + axios + vuex + echarts +  Tinymce +webpack
     3.电影web： Bootstrap + Jq + ajax + css + h5
     4.前端自动化部署：node + shelljs + ssh2-sftp-client  + nginx
- 
+    5.爬虫：selenium + BeautifulSoup4 + requests
+
 # 一、仓库项目 python-sys （安装python环境）
 
  1.为python编写的后台服务，涉及电影网站pc端页面model和电影网站后台系统的所有前端接口。
@@ -26,7 +28,8 @@
  5.启动服务项目：python manager.py runserver 项目启动后建议用 nginx 做反向代理配置
 
  6.卸载：pip uninstall -r modules.txt -y
-    
+
+ 7. 配置数据库时候，注意修改config/local_setting.py  里面的SQLALCHEMY_DATABASE_URI 这里 是整个后端项目的数据库配置，修改即可
 
  目录介绍：
     common 数据库model  
@@ -58,3 +61,11 @@
     utils 方法库  
     views 业务代码处和测试代码集合处  
 
+# 三、爬虫脚本 python
+1、爬虫脚本为python ，核心采用技术 selenium + BeautifulSoup4 + requests 
+2、selenium 需要配置本地环境 采用 windows版本，这个可用于自动化测试脚本使用，配置好了 ，使用起来非常酷炫。 
+3、本地驱动文件我已经 放入 python-sys/jobs chromedriver.exe，使用需要配置这个环境，本脚本采用谷歌 ，记得下载谷歌浏览器。
+4、爬虫的网站来源网络随便找的 电影网，但是资源非常不错（注意：仅仅用于学习，注意爬虫动态抓取的时间控制，不要把人家服务器搞崩了）。
+
+
+# 更新 2021.12.30 版本会不间断更新~   （路漫漫其修远兮，吾将上下而求索）
