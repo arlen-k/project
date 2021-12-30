@@ -47,6 +47,8 @@
 
  4.启动项目 npm run serve 进入 login 页面登录 账号密码默认可查看
 
+ 5.新增部署自动化部署脚本  upload config 自行配置服务器 npm run upload 自动提交
+
  目录介绍：
     api 接口库  
     assets 图片和初始全局样式  
