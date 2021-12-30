@@ -10,14 +10,14 @@ LastEditTime: 2021-11-16 14:46:10
 from application import app,manager
 from flask_script import Server,Command
 from www import *
-from jobs.launcher import runJob
+# from jobs.launcher import runJob
 
 ##web server
 manager.add_command( "runserver",Server( host = "0.0.0.0",use_debugger=True,use_reloader= True,port=80 ) )
 
 # from jobs.movie import MovieJob
 # manager.add_command( "runjob", MovieJob )
-manager.add_command( "runjob",runJob )
+# manager.add_command( "runjob",runJob )
 
 ##create_table
 @Command
