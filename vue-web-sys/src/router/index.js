@@ -4,7 +4,7 @@
  * @Autor: 作者博客：www.arlen.top
  * @Date: 2021-07-06 10:02:20
  * @LastEditors: Seven
- * @LastEditTime: 2021-12-08 16:41:16
+ * @LastEditTime: 2021-11-16 16:54:42
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -20,7 +20,7 @@ export const routes = [
     name: 'blog',
     component: () => import('../views/blog'),
     meta: {
-      title: "测试3D功能代码",
+      title: "博客",
     }
   },
   {

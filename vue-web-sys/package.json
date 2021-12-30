@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve  --port 8888",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "upload": "node upload/index.js"
   },
   "dependencies": {
     "@babel/compat-data": "7.9.0",
@@ -17,6 +18,8 @@
     "es6-promise": "^4.2.8",
     "js-md5": "^0.7.3",
     "qs": "^6.10.1",
+    "shelljs": "^0.8.4",
+    "ssh2-sftp-client": "^7.2.1",
     "swiper": "^5.4.5",
     "three": "^0.134.0",
     "tinymce": "^5.8.2",

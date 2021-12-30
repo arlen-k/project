@@ -14,23 +14,22 @@
             type="login_name"
             v-model="ruleForm.login_name"
             maxlength="20"
+            @keyup.enter="submitForm"
             placeholder="请输入账号"
-            autocomplete="off"
           ></el-input>
         </el-form-item>
         <el-form-item label="密码">
           <el-input
             type="login_pwd"
-            @keyup.enter="submitForm"
+            @keyup.enter="submitForm()"
             v-model="ruleForm.login_pwd"
             placeholder="请输入密码"
             maxlength="20"
             show-password
-            autocomplete="off"
           ></el-input>
         </el-form-item>
       </el-form>
-      <el-button type="primary" @click="submitForm()">登录</el-button>
+      <el-button type="primary"  @click.enter="submitForm()">登录</el-button>
     </div>
     <vue-particles
       color="#fff"

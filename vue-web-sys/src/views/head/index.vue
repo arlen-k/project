@@ -1,6 +1,6 @@
 <template>
   <div class="headers" >
-    <h2>管理系统</h2>
+    <h2>数据后台管理系统</h2>
     <span class="userName" @click="out">{{ user }}</span>
   </div>
 </template>
