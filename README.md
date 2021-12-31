@@ -28,7 +28,7 @@
  5.启动服务项目：python manager.py runserver 项目启动后建议用 nginx 做反向代理配置
 
  6.卸载：pip uninstall -r modules.txt -y
-
+ 
  7. 配置数据库时候，注意修改config/local_setting.py  里面的SQLALCHEMY_DATABASE_URI 这里 是整个后端项目的数据库配置，修改即可
 
  目录介绍：
